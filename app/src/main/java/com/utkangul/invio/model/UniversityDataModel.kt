@@ -10,11 +10,11 @@ data class UniversityData(
     @Json(name = "total") val total: Int,
     @Json(name = "itemPerPage") val itemPerPage: Int,
     @Json(name = "pageSize") val pageSize: Int,
-    @Json(name = "data") val data: MutableList<University>
+    @Json(name = "data") val data: MutableList<City>
 )
 
 @JsonClass(generateAdapter = true)
-data class University(
+data class City(
     @Json(name = "id") val id: Int,
     @Json(name = "province") val province: String,
     @Json(name = "universities") val universities: List<UniversityInfo>
@@ -27,6 +27,6 @@ data class UniversityInfo(
     @Json(name = "fax") val fax: String?,
     @Json(name = "website") val website: String?,
     @Json(name = "email") val email: String?,
-    @Json(name = "address") val address: String?,
+    @Json(name = "adress") val address: String?,
     @Json(name = "rector") val rector: String?
 )

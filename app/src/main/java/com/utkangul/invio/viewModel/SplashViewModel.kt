@@ -23,7 +23,7 @@ class SplashViewModel : ViewModel() {
     private val api: IUniversitiesApi = createApi()
 
     init {
-        fetchUniversitiesData(3)
+        fetchUniversitiesData(1)
     }
 
     private fun createApi(): IUniversitiesApi {
@@ -39,6 +39,7 @@ class SplashViewModel : ViewModel() {
     }
 
     fun fetchUniversitiesData(page: Int) {
+        println("cagiril,yruom su an")
         val call = api.getUniversities("usg-challenge", "universities-at-turkey", page)
 
         call.enqueue(object : Callback<UniversityData> {
@@ -48,7 +49,6 @@ class SplashViewModel : ViewModel() {
             ) {
                 if (response.isSuccessful) {
                     _universityData.value = response.body()
-                    println("ViewModelden unidata: ${response.body()}")
                     _isLoading.value = false
                 } else {
                     println("Error : ${response.code()}")

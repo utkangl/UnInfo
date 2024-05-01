@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/universityCard"
+    android:background="@drawable/university_card_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/universityHeader"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageButton
+                    android:id="@+id/expandCardButton"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/forward_arrow">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/universityNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_toStartOf="@id/favUniversityButton"
+                    android:layout_toEndOf="@id/expandCardButton"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="NAME OF UNIVERSITY"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/favUniversityButton"
+                    android:background="@drawable/heart"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true">
+                </ImageButton>
+
+            </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/universityHeader"
+            android:id="@+id/universityInformationsContainer"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#97ABBE"
+                android:id="@+id/phone_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/phoneTV"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_vertical"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#97ABBE"
+
+                android:id="@+id/fax_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/faxTV"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_vertical"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Fax: 0312 223 44 56"
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#97ABBE"
+
+                android:id="@+id/website_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/websiteTV"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:maxLength="255"
+                    android:maxLines="2"
+                    android:padding="5dp"
+                    android:text="Website: www.universitywebsite.com"
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#97ABBE"
+
+                android:id="@+id/address_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/addressTV"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:maxLength="255"
+                    android:padding="5dp"
+                    android:text="Adress: Karamanoğlu Mehmetbey Üniversitesi, Yunus Emre Yerleşkesi, 70100 KARAMAN/ TÜRKİYE"
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#97ABBE"
+                android:id="@+id/rector_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rectorTV"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_vertical"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Rector: Mehmet Emre Arslan"
+                    android:textSize="18dp"
+                    android:textColor="@color/black">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+</RelativeLayout>
