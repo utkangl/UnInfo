@@ -37,13 +37,11 @@ class MainActivityViewModel(context: Context) : ViewModel(){
         val universityInfo = universityCardView.info
         favList.add(universityInfo.toString())
         setSharedPref()
-        println(favList.size)
     }
 
     fun removeFavoriteUniversity(universityCardView: UniversityCardView, context: Context) {
         val universityInfo = universityCardView.info
         favList.remove(universityInfo.toString())
         setSharedPref()
-        println(favList.size)
     }
 }

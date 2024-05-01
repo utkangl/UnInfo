@@ -16,12 +16,8 @@ import androidx.core.content.ContextCompat.startActivity
 import com.utkangul.invio.R
 import com.utkangul.invio.internalClasses.InternalFunctions
 import com.utkangul.invio.model.UniversityInfo
-import com.utkangul.invio.viewModel.FavouritesViewModel
 import com.utkangul.invio.viewModel.MainActivityViewModel
 import com.utkangul.invio.viewModel.favList
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 var currentUrl: String? = null
 
@@ -32,8 +28,6 @@ class UniversityCardView(
 ): RelativeLayout(context) {
 
     val info = universityInfo
-    private val _removeView = MutableStateFlow(false)
-    val removeView: StateFlow<Boolean> = _removeView.asStateFlow()
 
     init {
         LayoutInflater.from(context).inflate(R.layout.university_card_view, this, true)
@@ -50,8 +44,7 @@ class UniversityCardView(
         val universityWebsite = universityInformationsContainer.findViewById<TextView>(R.id.websiteTV)
         val universityAddress = universityInformationsContainer.findViewById<TextView>(R.id.addressTV)
         val universityRector = universityInformationsContainer.findViewById<TextView>(R.id.rectorTV)
-        var mainActivityViewModel = MainActivityViewModel(context)
-        var favouritesViewModel = FavouritesViewModel()
+        val mainActivityViewModel = MainActivityViewModel(context)
 
         var isExpandClicked = false
         universityName.text = universityInfo.name
@@ -106,7 +99,6 @@ class UniversityCardView(
 
         favUniversityBTN.setOnClickListener{
             val isFav = mainActivityViewModel.isFav(universityInfo, favList)
-            println(isFav)
 
             if (isFav) {
                 mainActivityViewModel.removeFavoriteUniversity(this,context)

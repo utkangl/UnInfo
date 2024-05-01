@@ -1,7 +1,5 @@
 package com.utkangul.invio.viewModel
 
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import com.utkangul.invio.model.UniversityInfo
 
@@ -22,7 +20,6 @@ class FavouritesViewModel : ViewModel(){
                 rector = matchResult.groupValues[7]
             )
         } else {
-            println("data $data")
             UniversityInfo(null, null, null, null, null, null, null)
         }
     }

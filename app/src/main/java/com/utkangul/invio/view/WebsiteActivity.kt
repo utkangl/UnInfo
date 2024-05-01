@@ -11,14 +11,12 @@ class WebsiteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_website)
 
-        println(currentUrl)
         val webView = findViewById<WebView>(R.id.universityWebsiteView)
         val fixedUrl = fixUrl(currentUrl)
         if (!currentUrl.isNullOrEmpty())  webView.loadUrl(fixedUrl)
 
         else onBackPressedDispatcher.onBackPressed()
 
-        println(fixedUrl)
 
 
 
@@ -35,14 +33,14 @@ class WebsiteActivity : AppCompatActivity() {
                 failingUrl: String?
             ) {
                 super.onReceivedError(view, errorCode, description, failingUrl)
-                println("Web sayfası yüklenirken hata oluştu: $description")
+                println(description)
                 onBackPressedDispatcher.onBackPressed()
             }
         }
 
     }
 
-    fun fixUrl(url: String?): String {
+    private fun fixUrl(url: String?): String {
         return if (!url?.startsWith("https://")!!) {
             "https://$url"
         } else {
